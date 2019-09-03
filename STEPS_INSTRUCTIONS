@@ -4,5 +4,12 @@ $ swiftenv local 5.1
 # Create Swift Package
 $ swift package init --type executable
 
-# Run swift package
+# Run swift package (build if needed)
 $ swift run
+
+# Install dependencies and build project
+$ swift build
+
+# Create xcode project to build and debug
+# remember to use "My Mac" as a target
+$ swift package generate-xcodeproj
