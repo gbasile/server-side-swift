@@ -4,3 +4,5 @@ $ swiftenv local 5.1
 # Create Swift Package
 $ swift package init --type executable
 
+# Run swift package
+$ swift run
