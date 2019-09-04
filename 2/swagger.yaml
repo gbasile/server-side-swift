@@ -1,0 +1,69 @@
+swagger: "2.0"
+info:
+  title: "Lesson 1: Monolith"
+  description: A monolith application for simple messages.
+  termsOfService: https://www.udacity.com/legal
+  contact:
+    name: Jarrod Parkes
+    url: http://jarrodparkes.com
+    email: jarrod@udacity.com
+  license:
+    name: MIT
+    url: https://github.com/udacity/ios-short-s3-monolith/blob/master/LICENSE
+  version: 1.0.0
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  token:
+    type: basic
+paths:
+  /:
+    get:
+      description: Returns \"hello, world\" message.
+      responses:
+        200:
+          description: A \"hello, world\" message.
+          schema:
+            $ref: '#/definitions/Message'
+  /login:
+    get:
+      description: Returns a token to be used for accessing the monolith's secure endpoints.
+      responses:
+        200:
+          description: Token
+          schema:
+            $ref: '#/definitions/Token'
+  /secure:
+    get:
+      security:
+        - token: []
+      description: Returns a secure message.
+      responses:
+        200:
+          description: A \"hello, world\" message.
+          schema:
+            $ref: '#/definitions/Message'
+        401:
+          description: Not authenticated.
+definitions:
+  Message:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+    example: 
+      message: Hello world!
+  Token:
+    required:
+      - token
+    properties:
+      token:
+        type: string
+    example:
+      token: asdfadsflkjewrlkjsdal;jxc21335
