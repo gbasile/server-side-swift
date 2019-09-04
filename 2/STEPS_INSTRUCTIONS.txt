@@ -1,0 +1,5 @@
+# Get the docker image
+$ docker build -t monolith .
+
+# Run the docker image, open port 8080 and start a shell
+$ docker run -v $(pwd):/app --rm -it -p 8080:8080 monolith
