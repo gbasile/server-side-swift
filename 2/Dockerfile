@@ -1,4 +1,4 @@
-FROM ibmcom/swift-ubuntu:3.1
+FROM ibmcom/swift-ubuntu:5.0.1
 
 MAINTAINER Jarrod Parkes <jarrod@udacity.com>
 
