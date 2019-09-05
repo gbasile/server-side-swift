@@ -18,7 +18,7 @@ Log.logger = HeliumLogger(.info)
 
 // Setup basic credentials middleware
 let credentials = Credentials()
-let users = ["username" : "password"]
+let users = ["hackerman" : "1234"]
 let httpBasic = CredentialsHTTPBasic(verifyPassword: { userId, password, callback in
     if let storedPassword = users[userId], storedPassword == password {
         Log.info("\(userId) logged in")
