@@ -6,6 +6,11 @@ $ docker run -v $(pwd):/app --rm -it -p 8080:8080 monolith
 
 # Login  (pass: 1234)
 $ curl localhost:8080/login -uhackerman
+
+# Secure Hello world
+$ curl -H "Authorization: Bearer {token}" localhost:8080/secure
+
 Steps: 
 - Run the server inside a docker instance
 - Login using the specified user
+- Hit the secure endpoint
