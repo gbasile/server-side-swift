@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Signals",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSignals.git",
-        "state": {
-          "branch": null,
-          "revision": "6d13339441e687695f9980303594304599a03560",
-          "version": "1.0.20"
-        }
-      },
-      {
         "package": "Socket",
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
@@ -83,20 +74,11 @@
         }
       },
       {
-        "package": "OpenSSL",
-        "repositoryURL": "https://github.com/IBM-Swift/OpenSSL.git",
-        "state": {
-          "branch": null,
-          "revision": "6c7e2e3610037fbc05c0d846cec981518961d8bf",
-          "version": "2.2.2"
-        }
-      },
-      {
         "package": "COpenSSL",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL.git",
         "state": {
           "branch": null,
-          "revision": "1a4b571eb1f6429708e6915ca7c1d98cbba0f0f9",
+          "revision": "4669765f9c301a91cf76ad0ddeece27367017acc",
           "version": "4.0.1"
         }
       },
@@ -107,15 +89,6 @@
           "branch": null,
           "revision": "9a6fd2a63bf4f7f0b9a5eb90afa50eff66b7542d",
           "version": "3.2.0"
-        }
-      },
-      {
-        "package": "LinuxBridge",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-LinuxBridge.git",
-        "state": {
-          "branch": null,
-          "revision": "d6e64c48e6b06b6f1ab7ab9338280447baa8ca5c",
-          "version": "3.1.0"
         }
       },
       {

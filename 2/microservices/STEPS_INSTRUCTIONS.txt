@@ -1,0 +1,38 @@
+# Register to IBM Cloud
+https://cloud.ibm.com/registration
+
+# Install Command Line Tools
+$ curl -sL https://ibm.biz/idt-installer | bash
+
+# Login
+$ ibmcloud login
+
+# Create namespace
+$ ibmcloud cr namespace-add lesson2-microservices
+
+# Check Namespace
+$ ibmcloud cr namespace-list
+
+# Build runtime docker image
+$ docker build -t hello-runtime:1.0.0 -f Dockerfile-runtime .
+
+# Retag the docker image for IBM Cloud
+$ docker tag hello-runtime:1.0.0 de.icr.io/lesson2-microservices/hello
+
+# Login to local docker daemon on IBM Cloud
+$ ibmcloud cr login
+
+# Push image in the namespace IBM Cloud
+$ docker push de.icr.io/lesson2-microservices/hello
+
+# List images available in IBM Cloud
+$ ibmcloud cr image-list
+
+# Create organization
+$ ibmcloud account org-create gbasile
+
+# tap the cloud foundry formula repository
+$ brew tap cloudfoundry/tap
+
+# install the cloud foundry cli
+$ brew install cf-cli
