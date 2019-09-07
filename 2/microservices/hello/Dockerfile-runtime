@@ -1,18 +1,19 @@
-FROM ibmcom/swift-ubuntu-runtime:latest
+FROM ibmcom/swift-ubuntu-runtime:5.0.1
 
 MAINTAINER Jarrod Parkes <jarrod@udacity.com>
 
 USER root
 
-# Expose port 80
-EXPOSE 80
+EXPOSE 8080
 
 # Install system packages
 RUN apt-get update; \
     apt-get dist-upgrade -y; \
-    apt-get install -y librtmp0 login passwd
+    apt-get install -y librtmp0 login passwd; \
+    apt-get install -y apt-utils uuid-dev libssl-dev software-properties-common; \
+    add-apt-repository -y ppa:0k53d-karl-f830m/openssl; \
+    apt-get update; \
+    apt-get install -y openssl
 
-# Binaries should have been compiled against the correct platform (i.e. Ubuntu 14.04).
-RUN mkdir /root/hello
-ADD .build/debug/hello /root/hello
-CMD [ "sh", "-c", "/root/hello/hello" ]
+ADD .build/x86_64-unknown-linux/debug/hello /root/app/
+CMD [ "sh", "-c", "/root/app/hello"]
