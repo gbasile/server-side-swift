@@ -1,0 +1,11 @@
+# Create build image to compile for linux
+$ docker build --tag hello-build --file Dockerfile-build .
+
+# Compile the app for linux
+$ docker run -v $PWD:/swift-project --workdir /swift-project hello-build /swift-utils/tools-utils.sh build release
+
+# Create build image to run
+$ docker build --tag hello-run --file Dockerfile-run .
+
+# Run the docker image with the server
+$ docker run -v $PWD:/swift-project --rm -it -p 8080:8080 hello-run

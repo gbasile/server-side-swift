@@ -1,8 +1,0 @@
-# Build runtime docker image
-$ docker build -t hello-runtime -f Dockerfile-runtime .
-
-# Retag the docker image to match {docker_user}/{repository}:{name}
-$ docker tag hello-runtime:1.0.0 gbasile84/microservices:hello
-
-# Push to docker
-$ docker push gbasile84/microservices:hello
