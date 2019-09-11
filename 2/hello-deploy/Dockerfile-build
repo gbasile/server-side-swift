@@ -4,7 +4,7 @@ LABEL maintainer="IBM Swift Engineering at IBM Cloud"
 LABEL Description="Template Dockerfile that extends the ibmcom/swift-ubuntu image."
 
 # We can replace this port with what the user wants
-EXPOSE 8080 1024 1025
+EXPOSE 8080
 
 # Default user if not provided
 ARG bx_dev_user=root
