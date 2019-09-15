@@ -4,7 +4,7 @@ import SwiftyJSON
 let router = Router()
 
 router.get("/") { request, response, next in
-    response.send("Hello world!")
+    response.send("Hello Server Side Swift!")
     next()
 }
 

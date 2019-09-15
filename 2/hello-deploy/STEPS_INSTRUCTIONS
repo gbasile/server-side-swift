@@ -9,3 +9,20 @@ $ docker build --tag hello-run --file Dockerfile-run .
 
 # Run the docker image with the server
 $ docker run -v $PWD:/swift-project --rm -it -p 8080:8080 hello-run
+
+
+#### HEROKU
+# Push image described in the Dockerfile to heroku
+$ heroku container:push web -a server-side-swift
+
+# Release image to heroku
+$ heroku container:release web -a server-side-swift
+
+
+### Google Cloud Run
+
+# Tag the image for Google Cloud Run
+$ docker tag hello-run gcr.io/swift-253011/helloworld:5
+
+# Push the image
+$ docker push gcr.io/swift-253011/helloworld:5
