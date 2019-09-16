@@ -1,0 +1,3 @@
+# Buiild the images
+$ make
+

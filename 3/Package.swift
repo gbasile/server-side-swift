@@ -1,18 +1,17 @@
-// swift-tools-version:3.1
-import Foundation
+// swift-tools-version:5.0.0
 import PackageDescription
 
 let package = Package(
     name: "ActivitiesService",
 
-    targets: [
-        Target(name: "ActivitiesService"),
-        Target(name: "ActivitiesServer", dependencies: ["ActivitiesService"]),
-    ],
-
     dependencies: [
-        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 7),
-        .Package(url: "https://github.com/IBM-Swift/HeliumLogger.git", majorVersion: 1, minor: 7),
-        .Package(url: "https://github.com/nicholasjackson/swift-mysql.git", majorVersion: 1, minor: 8)
+        .package(url: "https://github.com/IBM-Swift/Kitura.git", from: "2.7.2"),
+        .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.9.0"),
+        .package(url: "https://github.com/nicholasjackson/swift-mysql.git", from: "1.9.1"),
+        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "5.0.0")
+    ],
+    targets: [
+        .target(name: "ActivitiesService", dependencies: ["Kitura", "HeliumLogger", "MySQL", "SwiftyJSON"]),
+        .target(name: "ActivitiesServer", dependencies: ["ActivitiesService"])
     ]
 )
